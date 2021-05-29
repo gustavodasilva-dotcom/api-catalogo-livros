@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiCatalogo</name>
+    </assembly>
+    <members>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.Obter(System.Int32,System.Int32)">
+            <summary>
+            Esta funcionalidade retorna todos os livros de forma paginada.
+            </summary>
+            <remarks>
+            Não é possível retornar livros sem paginação.
+            </remarks>
+            <param name="pagina">Indica qual página está sendo consultada (mínimo 1).</param>
+            <param name="quantidade">Indica a quantidade de registros retornardos na página (máximo 50)</param>
+            <response code="200">Caso haja livros cadastrados.</response>
+            <response code="204">Caso não haja livros cadastrados.</response>
+        </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.Obter(System.Guid)">
+            <summary>
+            Esta funcionalidade retorna um único livro com base no código identificador (Id) fornecido.
+            </summary>
+            <remarks>
+            Não é possível retornar um livro sem o Id.
+            </remarks>
+            <param name="idLivro">O Id do livro desejado.</param>
+            <response code="200">Caso o livro esteja cadastrado.</response>
+            <response code="204">Caso o livro não esteja cadastrado.</response>
+        </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.InserirLivro(ApiCatalogo.InputModel.LivroInputModel)">
+            <summary>
+            Esta funcionalidade permite cadastrar livros.
+            </summary>
+            <remarks>
+            O livro só será cadastrado se todas as informações obrigatórias forem preenchidas.
+            </remarks>
+            <param name="livroInputModel">Os dados do livro a ser cadastrado.</param>
+            <response code="200">Caso o livro seja cadastrado com sucesso.</response>
+            <response code="422">Caso o livro a ser cadastrado já esteja cadastrado.</response>
+        </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.AtualizarLivro(System.Guid,ApiCatalogo.InputModel.LivroInputModel)">
+            <summary>
+            Esta funcionalidade permite atualizar todos os dados de um livro.
+            </summary>
+            <remarks>
+            O livro precisa estar cadastrado.
+            </remarks>
+            <param name="idLivro">O Id do livro a ser atualizado.</param>
+            <param name="livroInputModel">Dados a serem atualizados no livro.</param>
+            <response code="200">Caso o livro esteja cadastrado.</response>
+            <response code="404">Caso o livro não esteja cadastrado.</response>
+        </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.AtualizarLivro(System.Guid,System.Double)">
+            <summary>
+            Esta funcionalidade permite atualizar o recurso de preço em um livro.
+            </summary>
+            <remarks>
+            O livro precisa estar cadastrado.
+            </remarks>
+            <param name="idLivro">O Id do livro a ser atualizado.</param>
+            <param name="preco">Preço a ser atualizado no livro.</param>
+            <response code="200">Caso o livro esteja cadastrado.</response>
+            <response code="404">Caso o livro não esteja cadastrado.</response>
+        </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.ApagarLivro(System.Guid)">
+            <summary>
+            Esta funcionalidade permite apagar o registro de um livro.
+            </summary>
+            <remarks>
+            O livro precisa estar cadastrado.
+            </remarks>
+            <param name="idLivro">O Id do livro a ser apagado.</param>
+            <response code="200">Caso o livro esteja cadastrado.</response>
+            <response code="404">Caso o livro não esteja cadastrado.</response>
+        </member>
+    </members>
+</doc>
