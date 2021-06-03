@@ -120,6 +120,136 @@ namespace ApiCatalogo.Controllers.V1
 
 
         /// <summary>
+        /// Esta funcionalidade permite atualizar o recurso de nome em um livro.
+        /// </summary>
+        /// <remarks>
+        /// O livro precisa estar cadastrado.
+        /// </remarks>
+        /// <param name="idLivro">O Id do livro a ser atualizado.</param>
+        /// <param name="nome">Nome a ser atualizado no livro.</param>
+        /// <response code="200">Caso o livro esteja cadastrado.</response>
+        /// <response code="404">Caso o livro não esteja cadastrado.</response>
+        [HttpPatch("{idLivro:guid}/nome/{nome}")]
+        public async Task<ActionResult> AtualizarLivroNome([FromRoute] Guid idLivro, [FromRoute] string nome)
+        {
+            try
+            {
+                await _livroService.AtualizarNome(idLivro, nome);
+
+                return Ok();
+            }
+            catch(LivroNaoCadastradoException ex)
+            {
+                return NotFound("Esse livro não está cadastrado.");
+            }
+        }
+
+
+        /// <summary>
+        /// Esta funcionalidade permite atualizar o recurso de autor em um livro.
+        /// </summary>
+        /// <remarks>
+        /// O livro precisa estar cadastrado.
+        /// </remarks>
+        /// <param name="idLivro">O Id do livro a ser atualizado.</param>
+        /// <param name="autor">Autor a ser atualizado no livro.</param>
+        /// <response code="200">Caso o livro esteja cadastrado.</response>
+        /// <response code="404">Caso o livro não esteja cadastrado.</response>
+        [HttpPatch("{idLivro:guid}/autor/{autor}")]
+        public async Task<ActionResult> AtualizarLivroAutor([FromRoute] Guid idLivro, [FromRoute] string autor)
+        {
+            try
+            {
+                await _livroService.AtualizarAutor(idLivro, autor);
+
+                return Ok();
+            }
+            catch(LivroNaoCadastradoException ex)
+            {
+                return NotFound("Esse livro não está cadastrado.");
+            }
+        }
+
+
+        /// <summary>
+        /// Esta funcionalidade permite atualizar o recurso de editora em um livro.
+        /// </summary>
+        /// <remarks>
+        /// O livro precisa estar cadastrado.
+        /// </remarks>
+        /// <param name="idLivro">O Id do livro a ser atualizado.</param>
+        /// <param name="editora">Editora a ser atualizada no livro.</param>
+        /// <response code="200">Caso o livro esteja cadastrado.</response>
+        /// <response code="404">Caso o livro não esteja cadastrado.</response>
+        [HttpPatch("{idLivro:guid}/editora/{editora}")]
+        public async Task<ActionResult> AtualizarLivroEditora([FromRoute] Guid idLivro, [FromRoute] string editora)
+        {
+            try
+            {
+                await _livroService.AtualizarEditora(idLivro, editora);
+
+                return Ok();
+            }
+            catch(LivroNaoCadastradoException ex)
+            {
+                return NotFound("Esse livro não está cadastrado.");
+            }
+        }
+
+
+        /// <summary>
+        /// Esta funcionalidade permite atualizar o recurso de edição em um livro.
+        /// </summary>
+        /// <remarks>
+        /// O livro precisa estar cadastrado.
+        /// </remarks>
+        /// <param name="idLivro">O Id do livro a ser atualizado.</param>
+        /// <param name="edicao">Número da edição a ser atualizada no livro.</param>
+        /// <response code="200">Caso o livro esteja cadastrado.</response>
+        /// <response code="404">Caso o livro não esteja cadastrado.</response>
+        [HttpPatch("{idLivro:guid}/edicao/{edicao:int}")]
+        public async Task<ActionResult> AtualizarLivroEdicao([FromRoute] Guid idLivro, [FromRoute] int edicao)
+        {
+            try
+            {
+                await _livroService.AtualizarEdicao(idLivro, edicao);
+
+                return Ok();
+            }
+            catch(LivroNaoCadastradoException ex)
+            {
+                return NotFound("Esse livro não está cadastrado.");
+            }
+        }
+
+
+        /// <summary>
+        /// Esta funcionalidade permite atualizar o recurso de paginas em um livro.
+        /// </summary>
+        /// <remarks>
+        /// O livro precisa estar cadastrado.
+        /// </remarks>
+        /// <param name="idLivro">O Id do livro a ser atualizado.</param>
+        /// <param name="paginas">Número de páginas a serem atualizadas no livro.</param>
+        /// <response code="200">Caso o livro esteja cadastrado.</response>
+        /// <response code="404">Caso o livro não esteja cadastrado.</response>
+        [HttpPatch("{idLivro:guid}/paginas/{paginas:int}")]
+        public async Task<ActionResult> AtualizarLivroPaginas([FromRoute] Guid idLivro, [FromRoute] int paginas)
+        {
+            try
+            {
+                await _livroService.AtualizarPaginas(idLivro, paginas);
+
+                return Ok();
+            }
+            catch(LivroNaoCadastradoException ex)
+            {
+                return NotFound("Esse livro não está cadastrado.");
+            }
+        }
+
+
+        /// <summary>
         /// Esta funcionalidade permite atualizar o recurso de preço em um livro.
         /// </summary>
         /// <remarks>

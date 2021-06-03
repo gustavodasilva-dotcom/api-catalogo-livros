@@ -50,6 +50,66 @@
             <response code="200">Caso o livro esteja cadastrado.</response>
             <response code="404">Caso o livro não esteja cadastrado.</response>
         </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.AtualizarLivroNome(System.Guid,System.String)">
+            <summary>
+            Esta funcionalidade permite atualizar o recurso de nome em um livro.
+            </summary>
+            <remarks>
+            O livro precisa estar cadastrado.
+            </remarks>
+            <param name="idLivro">O Id do livro a ser atualizado.</param>
+            <param name="nome">Nome a ser atualizado no livro.</param>
+            <response code="200">Caso o livro esteja cadastrado.</response>
+            <response code="404">Caso o livro não esteja cadastrado.</response>
+        </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.AtualizarLivroAutor(System.Guid,System.String)">
+            <summary>
+            Esta funcionalidade permite atualizar o recurso de autor em um livro.
+            </summary>
+            <remarks>
+            O livro precisa estar cadastrado.
+            </remarks>
+            <param name="idLivro">O Id do livro a ser atualizado.</param>
+            <param name="autor">Autor a ser atualizado no livro.</param>
+            <response code="200">Caso o livro esteja cadastrado.</response>
+            <response code="404">Caso o livro não esteja cadastrado.</response>
+        </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.AtualizarLivroEditora(System.Guid,System.String)">
+            <summary>
+            Esta funcionalidade permite atualizar o recurso de editora em um livro.
+            </summary>
+            <remarks>
+            O livro precisa estar cadastrado.
+            </remarks>
+            <param name="idLivro">O Id do livro a ser atualizado.</param>
+            <param name="editora">Editora a ser atualizada no livro.</param>
+            <response code="200">Caso o livro esteja cadastrado.</response>
+            <response code="404">Caso o livro não esteja cadastrado.</response>
+        </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.AtualizarLivroEdicao(System.Guid,System.Int32)">
+            <summary>
+            Esta funcionalidade permite atualizar o recurso de edição em um livro.
+            </summary>
+            <remarks>
+            O livro precisa estar cadastrado.
+            </remarks>
+            <param name="idLivro">O Id do livro a ser atualizado.</param>
+            <param name="edicao">Número da edição a ser atualizada no livro.</param>
+            <response code="200">Caso o livro esteja cadastrado.</response>
+            <response code="404">Caso o livro não esteja cadastrado.</response>
+        </member>
+        <member name="M:ApiCatalogo.Controllers.V1.LivrosController.AtualizarLivroPaginas(System.Guid,System.Int32)">
+            <summary>
+            Esta funcionalidade permite atualizar o recurso de paginas em um livro.
+            </summary>
+            <remarks>
+            O livro precisa estar cadastrado.
+            </remarks>
+            <param name="idLivro">O Id do livro a ser atualizado.</param>
+            <param name="paginas">Número de páginas a serem atualizadas no livro.</param>
+            <response code="200">Caso o livro esteja cadastrado.</response>
+            <response code="404">Caso o livro não esteja cadastrado.</response>
+        </member>
         <member name="M:ApiCatalogo.Controllers.V1.LivrosController.AtualizarLivro(System.Guid,System.Double)">
             <summary>
             Esta funcionalidade permite atualizar o recurso de preço em um livro.

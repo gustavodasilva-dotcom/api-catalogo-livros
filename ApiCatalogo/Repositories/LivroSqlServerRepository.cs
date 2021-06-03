@@ -20,7 +20,7 @@ namespace ApiCatalogo.Repositories
 
         public async Task Atualizar(Livro livro)
         {
-            var comando = $"UPDATE Livros SET Nome = '{livro.Nome}', Preco = {livro.Preco.ToString().Replace(",", ".")} WHERE Id = '{livro.Id}'";
+            var comando = $"UPDATE Livros SET Nome = '{livro.Nome}', Autor = '{livro.Autor}', Editora = '{livro.Editora}', Edicao = {livro.Edicao}, Paginas = {livro.Paginas}, Preco = {livro.Preco.ToString().Replace(",", ".")} WHERE Id = '{livro.Id}'";
 
             await sqlConnection.OpenAsync();
             SqlCommand sqlCommand = new SqlCommand(comando, sqlConnection);

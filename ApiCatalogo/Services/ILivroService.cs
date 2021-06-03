@@ -19,6 +19,16 @@ namespace ApiCatalogo.Services
 
         Task Atualizar(Guid id, double preco);
 
+        Task AtualizarNome(Guid id, string nome);
+
+        Task AtualizarAutor(Guid id, string autor);
+
+        Task AtualizarEditora(Guid id, string editora);
+
+        Task AtualizarEdicao(Guid id, int edicao);
+
+        Task AtualizarPaginas(Guid id, int paginas);
+
         Task Remover(Guid id);
     }
 }

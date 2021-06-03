@@ -36,6 +36,72 @@ namespace ApiCatalogo.Services
             await _livroRepository.Atualizar(entidadeLivro, id);
         }
 
+
+        public async Task AtualizarNome(Guid id, string nome)
+        {
+            var entidadeLivro = await _livroRepository.Obter(id);
+
+            if (entidadeLivro == null)
+                throw new LivroNaoCadastradoException();
+
+            entidadeLivro.Nome = nome;
+
+            await _livroRepository.Atualizar(entidadeLivro);
+        }
+
+
+        public async Task AtualizarAutor(Guid id, string autor)
+        {
+            var entidadeLivro = await _livroRepository.Obter(id);
+
+            if (entidadeLivro == null)
+                throw new LivroNaoCadastradoException();
+
+            entidadeLivro.Autor = autor;
+
+            await _livroRepository.Atualizar(entidadeLivro);
+        }
+
+
+        public async Task AtualizarEditora(Guid id, string editora)
+        {
+            var entidadeLivro = await _livroRepository.Obter(id);
+
+            if (entidadeLivro == null)
+                throw new LivroNaoCadastradoException();
+
+            entidadeLivro.Editora = editora;
+
+            await _livroRepository.Atualizar(entidadeLivro);
+        }
+
+
+        public async Task AtualizarEdicao(Guid id, int edicao)
+        {
+            var entidadeLivro = await _livroRepository.Obter(id);
+
+            if (entidadeLivro == null)
+                throw new LivroNaoCadastradoException();
+
+            entidadeLivro.Edicao = edicao;
+
+            await _livroRepository.Atualizar(entidadeLivro);
+        }
+
+
+        public async Task AtualizarPaginas(Guid id, int paginas)
+        {
+            var entidadeLivro = await _livroRepository.Obter(id);
+
+            if (entidadeLivro == null)
+                throw new LivroNaoCadastradoException();
+
+            entidadeLivro.Paginas = paginas;
+
+            await _livroRepository.Atualizar(entidadeLivro);
+        }
+
+
         public async Task Atualizar(Guid id, double preco)
         {
             var entidadeLivro = await _livroRepository.Obter(id);
